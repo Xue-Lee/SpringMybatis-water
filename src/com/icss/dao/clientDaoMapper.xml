@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icss.dao.ClientDao">
+	<sql id="adminSql">select * from client</sql>
+	<select id="findClient" resultType="client">
+		<include refid="adminSql"></include>
+			order by startDate desc;
+	</select>
+</mapper>

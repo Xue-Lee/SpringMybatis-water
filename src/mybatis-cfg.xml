@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.icss.entity.Admin" alias="admin"/>
+		<typeAlias type="com.icss.entity.Client" alias="book"/>
+		<typeAlias type="com.icss.entity.Sended" alias="sended"/>
+	</typeAliases>
+	<environments default="t2">
+		<environment id="t1">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/bookMarket?characterEncoding=utf8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="root"/>
+			</dataSource>
+		</environment>
+		<environment id="t2">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/watershop?characterEncoding=utf8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="841013"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/icss/dao/adminDaoMapper.xml"/>
+		<mapper resource="com/icss/dao/clientDaoMapper.xml"/>
+	</mappers>
+</configuration>
