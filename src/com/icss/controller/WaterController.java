@@ -1,4 +1,4 @@
-package com.icss.contorller;
+package com.icss.controller;
 
 import java.util.List;
 
@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.icss.dao.AdminDao;
 import com.icss.dao.ClientDao;
-import com.icss.entiry.Admin;
-import com.icss.entiry.Client;
+import com.icss.entity.Admin;
+import com.icss.entity.Client;
 
 @Controller
 public class WaterController {
 	@Autowired
-	private AdminDao adminDao;
 	private ClientDao clientDao;
+	@Autowired
+	private AdminDao adminDao;
 	@RequestMapping("login")
 	public String login(HttpServletRequest request,Admin admin) {
 		System.out.println("login..............");
 		Admin ad = adminDao.findAdmin(admin);
 		if(ad != null) {
-			return "showClient.do";
+			return "forward:showClient.do";
 		}else {
 			return "login";
 		}
@@ -33,6 +34,7 @@ public class WaterController {
 	public String showClient(HttpServletRequest request) {
 		System.out.println("showclient...............");
 		List<Client> listClient = clientDao.findClient();
+		System.out.println("111111111111111111111");
 		request.setAttribute("listClient", listClient);
 		return "showClient";
 	}

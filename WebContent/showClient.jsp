@@ -6,12 +6,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+	.tab{
+	width:900px;
+	margin:100px auto;
+	}
+	.tab td{
+	height:30px
+	border-bottom:1px solid #666;
+	}
+</style>
+
 </head>
 <body>
-	<table>
+	<table class="tab">
 		<thead style="text-align: center;font-size:30px">显示用户信息</thead>
 		<tr><td>编号</td><td>姓名</td><td>电话</td><td>地址</td><td>押金</td><td>预定桶数</td><td>开始日期</td></tr>
-		<c:forEach	items="listClient" var="client">
+		<c:forEach	items="${listClient}" var="client">
 			<tr>
 				<td>${client.clientId}</td>
 				<td>${client.clientName}</td>

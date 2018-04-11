@@ -4,15 +4,15 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.icss.entity.Admin" alias="admin"/>
-		<typeAlias type="com.icss.entity.Client" alias="book"/>
+		<typeAlias type="com.icss.entity.Client" alias="client"/>
 		<typeAlias type="com.icss.entity.Sended" alias="sended"/>
 	</typeAliases>
-	<environments default="t2">
+	<environments default="t1">
 		<environment id="t1">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost:3306/bookMarket?characterEncoding=utf8"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/watershop?characterEncoding=utf8"/>
 				<property name="username" value="root"/>
 				<property name="password" value="root"/>
 			</dataSource>
@@ -28,7 +28,7 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/icss/dao/adminDaoMapper.xml"/>
-		<mapper resource="com/icss/dao/clientDaoMapper.xml"/>
+		<mapper resource="com/icss/dao/AdminDaoMapper.xml"/>
+		<mapper resource="com/icss/dao/ClientDaoMapper.xml"/>
 	</mappers>
 </configuration>

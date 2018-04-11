@@ -1,4 +1,4 @@
-package com.icss.entiry;
+package com.icss.entity;
 
 import java.sql.Timestamp;
 

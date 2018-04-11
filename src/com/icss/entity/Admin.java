@@ -1,4 +1,4 @@
-package com.icss.entiry;
+package com.icss.entity;
 
 public class Admin {
 	private String userId;
